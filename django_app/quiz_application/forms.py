@@ -3,7 +3,14 @@ from .models import Card
 
 
 class CardForm(forms.ModelForm):
+    post = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Write a post...'
+        }
+    ))
+
     class Meta:
-        model = Card
-        fields = ('question','answer')
+        model = Post
+        fields = ('post',)
 

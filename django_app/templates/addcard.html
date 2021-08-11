@@ -1,0 +1,16 @@
+
+{% block title %}Add a new Flashcard{% endblock %}
+{% block main %}
+<div class="container">
+  <h1 class="page-header">Add a New Flashcard</h1>
+    <form action="/addcard/{{card_id}}/comment" method ="post">
+        {% csrf_token %}
+        <input type="text" name="question" id="question" placeholder="Question"/>
+        <input type="text" name="answer" id="answer" placeholder="Answer"/>
+        <input type="submit" value="Post"/>
+</form>
+
+  
+</form>
+</div>
+{% endblock %}
