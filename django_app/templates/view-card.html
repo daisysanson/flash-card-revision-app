@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<head>
+
+</head>
+{% block main %}
+<body class="bg-light">
+<div class ="container">
+    <h1>View cards</h1>
+    <h2>{{deck.title}}</h2>
+    {% for card in cards %}
+    <div class ="row mt-5">
+        <div class="card-body">        
+            <h4 id="flip" class="card-text">{{card.question}}</h4>
+            <button href="#" class="btn btn-danger" onclick="flipCard()">
+                <i class="fa fa-exchange"></i>
+                Flip Card
+            </button>
+            
+    
+            <div class="pagination">
+              {% if cards.has_previous %}
+                <li><a href="?page={{ cards.previous_page_number }}"></a></li>
+         
+          {% endif %}
+          <span class="current">
+            Page {{ cards.number }} of {{ cards.paginator.num_pages }}.
+        </span>
+          {% if cards.has_next %}
+          <li><a href="?page={{ cards.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+         {% endif %}
+
+        </div>
+    </div>  
+  </div>
+
+    <script type="text/javascript">
+        function flipCard() { 
+            if (document.getElementById('flip').innerHTML == "{{card.question}}"){
+                document.getElementById('flip').innerHTML = "{{card.answer}}";
+            }
+            else if (document.getElementById('flip').innerHTML == "{{card.answer}}"){
+                document.getElementById('flip').innerHTML = "{{card.question}}";
+            }
+            else{
+                document.getElementById('flip').innerHTML = "Answer: ";
+            } 
+        } 
+    </script>
+        {% endfor %}
+{% endblock %}
+</body>

@@ -1,16 +1,12 @@
-from django import forms
-from .models import Card
+from django.forms import ModelForm
+from .models import Card, Deck
 
+class DeckForm(ModelForm):
+	class Meta:
+		model = Deck
+		fields = ['title']
 
-class CardForm(forms.ModelForm):
-    post = forms.CharField(widget=forms.TextInput(
-        attrs={
-            'class': 'form-control',
-            'placeholder': 'Write a post...'
-        }
-    ))
-
-    class Meta:
-        model = Post
-        fields = ('post',)
-
+class CardForm(ModelForm):
+	class Meta:
+		model = Card
+		fields = ['question', 'answer']

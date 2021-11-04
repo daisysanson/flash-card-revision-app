@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<head>
+
+</head>
+{% block main %}
+<body class="bg-light">
+<div class ="container">
+    <h1>View Deck</h1>
+    {% for deck in decks %}
+    <table class="table table-striped">
+    <tr>{{deck.title}}</tr>
+                    <br>
+                    <td><a href="{% url 'view-card' deck.id %}" class="btn btn-primary">View cards in {{deck.title}}</button></td>
+                    </a>
+                    <td><a href="{% url 'add-card' deck.id %}" class="btn btn-primary">Add cards to {{deck.title}}</button></td>
+          {% endfor %}
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </body>
+{% endblock %}

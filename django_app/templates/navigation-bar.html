@@ -1,0 +1,35 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'home' %}">Flashcards!</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add-decks' %}"
+              >Add new Deck</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'view-decks' %}"
+              >View all decks</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span>{{user.username}}&nbsp</span>>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>

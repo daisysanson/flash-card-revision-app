@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Add a new Deck{% endblock %}
+{% block main %}
+<div class="container">
+  {{ form.errors }}
+  <h1 class="page-header">Add a Set</h1>
+    <form action="/add-decks/{{deck_id}}" method ="post">
+        {% csrf_token %}
+        <input type="text" name="title" id="title" placeholder="Title"/>
+        <input type="submit" value="Submit"/>
+</form>
+
+
+</div>
+{% endblock %}

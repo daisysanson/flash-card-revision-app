@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Create an Account{% endblock %}
+{% block main %}
+<form role="form" method='post'>
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register an account</legend>
+            {{ form|crispy }}
+        </fieldset>
+            <p>Already have an account?<a href="/login">here</a></p>
+	<button type="submit" class="btn btn-success">Login</button>	
+            <button type="submit" class="btn btn-success" value='Submit'>Register</button>
+            </form>
+{% endblock %}

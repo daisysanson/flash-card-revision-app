@@ -1,0 +1,51 @@
+body {
+    padding-top: 50px;
+    font-family: 'Hind Vadodara', sans-serif;
+    background-color:#EFF7F8;
+}
+
+th{
+    background-color:#EFF7F8;
+}
+
+th{
+    background-color:#A5D2D8;
+    font-size: 20px;
+}
+
+.jumbotron{
+    background-color: aliceblue;
+}
+
+.btn{
+    color:white;
+    border: 2px transparent #3F5C77;
+    background-color: #357078;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom:20px
+
+}
+
+h1{
+    size: 40px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom:20px;
+    color: #3F5C77;
+}
+
+.navbar-nav {
+    flex-direction: row;
+  }
+  
+  .nav-link {
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
+  }
+  
+  /* Fixes dropdown menus placed on the right side */
+  .ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+  }
